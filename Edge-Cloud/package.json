@@ -1,0 +1,18 @@
+{
+  "name": "juegito-node-red",
+  "version": "1.0.0",
+  "description": "Historial de mensajes MQTT de Juegito: Node-RED los guarda en SQLite y los sirve por HTTP",
+  "private": true,
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "start": "node-red --userDir . flows_juegito.json",
+    "simular": "node simular_partida.js"
+  },
+  "dependencies": {
+    "mqtt": "^5.15.0",
+    "node-red": "^5.0.9",
+    "node-red-node-sqlite": "^2.0.1"
+  }
+}
