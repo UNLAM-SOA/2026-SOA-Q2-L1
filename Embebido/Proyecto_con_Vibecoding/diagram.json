@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "author": "KK",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": 160.2, "left": 31.6, "attrs": {} },
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 139.1, "left": -177.8, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 102, "left": 263, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": 102, "left": 378.2, "attrs": { "color": "blue" } },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 102,
+      "left": 493.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": 391.4,
+      "left": 268.8,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn2",
+      "top": 391.4,
+      "left": 336,
+      "attrs": { "color": "blue", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn3",
+      "top": 391.4,
+      "left": 412.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 401.9, "left": 115, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 243.95,
+      "left": 192,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 243.95,
+      "left": 307.2,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 243.95,
+      "left": 422.4,
+      "attrs": { "value": "330" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 401.9, "left": 460.6, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 144.76, "left": 700.8, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 192, "left": 700.2, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 163.2,
+      "left": 739.2,
+      "attrs": { "text": "Fuente externa 5V" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 105.6,
+      "left": 19.2,
+      "attrs": { "text": "Comparto GND\npor fuente externa" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 21.6,
+      "left": 577.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": 336,
+      "left": 700.8,
+      "attrs": { "text": "Alimentación del \ncircuito de  3,3v\nsale de la esp32" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": 28.8,
+      "left": 681.6,
+      "attrs": { "text": "Buzzer 5V" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text5",
+      "top": 48,
+      "left": 288,
+      "attrs": { "text": "Leds 3,3v" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text6",
+      "top": 432,
+      "left": 307.2,
+      "attrs": { "text": "Pulsadores 3,3v" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text7",
+      "top": 547.2,
+      "left": 470.4,
+      "attrs": { "text": "sensor presion 3,3v" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text8",
+      "top": 451.2,
+      "left": -57.6,
+      "attrs": { "text": "potenciometro 3,3v" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "esp:GND.3", "black", [] ],
+    [ "led2:C", "esp:GND.3", "black", [] ],
+    [ "led3:C", "esp:GND.3", "black", [] ],
+    [ "esp:GND.1", "bb1:bn.1", "black", [ "h9.3", "v67.1", "h144.8" ] ],
+    [ "led2:C", "bb1:tn.29", "black", [ "v0" ] ],
+    [ "led3:C", "bb1:tn.39", "black", [ "v0" ] ],
+    [ "led1:C", "bb1:tn.19", "black", [ "v0" ] ],
+    [ "esp:D26", "bb1:15t.d", "#8f4814", [ "h-38.4", "v-134.5", "h403.2" ] ],
+    [ "esp:D27", "bb1:27t.d", "#8f4814", [ "h-48", "v-153.9", "h528" ] ],
+    [ "esp:D14", "bb1:39t.d", "#8f4814", [ "h-57.6", "v-172.7", "h652.8" ] ],
+    [ "bb1:21t.d", "led1:A", "#8f4814", [ "h38.4", "v-96" ] ],
+    [ "bb1:33t.d", "led2:A", "#8f4814", [ "h38.4", "v-96" ] ],
+    [ "bb1:45t.d", "led3:A", "#8f4814", [ "h38.4", "v-96" ] ],
+    [ "pot1:VCC", "bb1:bp.12", "red", [ "v19.2", "h38.4" ] ],
+    [ "pot1:GND", "bb1:bn.3", "black", [ "v19.2", "h-48", "v-134.4" ] ],
+    [ "btn1:2.l", "bb1:bn.16", "black", [ "h0" ] ],
+    [ "btn1:1.l", "bb1:23b.j", "blue", [ "h0" ] ],
+    [ "btn2:2.l", "bb1:bn.22", "black", [ "h0" ] ],
+    [ "esp:D18", "bb1:17b.h", "blue", [ "h57.3", "v67.2", "h230.4" ] ],
+    [ "btn2:1.l", "bb1:30b.i", "blue", [ "h0" ] ],
+    [ "esp:D19", "bb1:24b.f", "blue", [ "h66.9", "v67.1", "h9.6" ] ],
+    [ "btn3:2.l", "bb1:bn.27", "black", [ "h0" ] ],
+    [ "btn3:1.l", "bb1:37b.h", "blue", [ "h0" ] ],
+    [ "pot2:SIG", "esp:D35", "green", [ "v57.6", "h-845.2", "v-326.4", "h172.8" ] ],
+    [ "pot2:VCC", "bb1:bp.42", "red", [ "v57.6", "h8.8" ] ],
+    [ "pot2:GND", "bb1:bn.34", "black", [ "v38.4", "h-9.6" ] ],
+    [ "bb1:tp.50", "vcc1:VCC", "red", [ "v0" ] ],
+    [ "gnd1:GND", "bb1:tn.50", "black", [ "v0" ] ],
+    [ "esp:GND.2", "bb1:tn.1", "black", [ "h-96", "v-153.7", "h278.4", "v48" ] ],
+    [ "esp:3V3", "bb1:bp.1", "red", [ "h28.5", "v48.9" ] ],
+    [ "bz1:1", "bb1:tn.47", "black", [ "v0" ] ],
+    [ "bz1:2", "esp:D4", "magenta", [ "v19.2", "h57.2", "v-115.2", "h-720", "v249.5" ] ],
+    [ "esp:D34", "pot1:SIG", "green", [ "h-76.8", "v326.2", "h9.6" ] ],
+    [ "bb1:23b.i", "bb1:17b.i", "blue", [ "v0" ] ],
+    [ "bb1:30b.h", "bb1:24b.h", "blue", [ "v0" ] ],
+    [ "bb1:37b.g", "bb1:31b.g", "blue", [ "v0" ] ],
+    [ "bb1:31b.f", "esp:D21", "blue", [ "v-9.6", "h-345.6", "v-67.2" ] ],
+    [ "r2:1", "bb1:15t.e", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:21t.e", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:27t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:33t.e", "", [ "$bb" ] ],
+    [ "r3:1", "bb1:39t.e", "", [ "$bb" ] ],
+    [ "r3:2", "bb1:45t.e", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}

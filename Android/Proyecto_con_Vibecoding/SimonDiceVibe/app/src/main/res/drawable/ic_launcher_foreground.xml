@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 2x2 pads inside the 66dp safe zone -->
+    <path android:fillColor="@color/pad_red" android:pathData="M30,30h22a4,4 0 0 1 4,4v18h-26v-22a0,0 0 0 1 0,0z" />
+    <path android:fillColor="@color/pad_blue" android:pathData="M56,30h18a4,4 0 0 1 4,4v18h-22z" />
+    <path android:fillColor="@color/pad_green" android:pathData="M30,56h22v22h-18a4,4 0 0 1 -4,-4z" />
+    <path android:fillColor="@color/pad_gold" android:pathData="M56,56h22v18a4,4 0 0 1 -4,4h-18z" />
+</vector>

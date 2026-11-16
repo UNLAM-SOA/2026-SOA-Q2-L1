@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_night">#0B0720</color>
+    <color name="ic_bg_top">#2B1B6B</color>
+    <color name="ic_bg_bottom">#0B0720</color>
+    <color name="pad_red">#FF4D6D</color>
+    <color name="pad_blue">#4D9DFF</color>
+    <color name="pad_green">#3DDC97</color>
+    <color name="pad_gold">#FFC857</color>
+</resources>

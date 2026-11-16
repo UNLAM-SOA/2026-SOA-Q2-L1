@@ -21,7 +21,7 @@
 #define PIN_SENSOR_PRESION  35
 
 
-#define PIN_BUZZER          13
+#define PIN_BUZZER          4
 
 // ---------------- Estados ----------------
 enum estado_t {
