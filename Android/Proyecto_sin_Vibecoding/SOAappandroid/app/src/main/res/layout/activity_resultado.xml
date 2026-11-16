@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F8"
+    android:orientation="vertical"
+    tools:context=".ResultadoActivity">
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="Fin de la partida"
+            android:textColor="#1B1B1F"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Te quedaste sin vidas"
+            android:textColor="#5E5F6B"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Contenido en dos columnas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp">
+
+        <!-- Columna izquierda: nivel alcanzado y video de premio -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNivelAlcanzado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tarjeta"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:text="Llegaste al nivel 2"
+                android:textColor="#1B1B1F"
+                android:textSize="22sp" />
+
+            <!-- El video se reproduce durante los segundos ganados -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="#1B1B1F">
+
+                <VideoView
+                    android:id="@+id/videoPremio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/txtVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#99000000"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:text="Tu premio: 15 s de video"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- Columna derecha: secuencia, fallo y botones -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tarjeta"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="La secuencia completa"
+                    android:textColor="#5E5F6B"
+                    android:textSize="13sp" />
+
+                <!-- Si la secuencia es larga, se desliza de costado -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <!-- Los círculos se agregan desde Kotlin -->
+                    <LinearLayout
+                        android:id="@+id/contenedorChips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/txtSecuencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ROJO · [SENSOR] · AZUL · VERDE"
+                    android:textColor="#1B1B1F"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtFallo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_cartel"
+                android:backgroundTint="#FDECEC"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                android:text="Fallaste en el paso 2"
+                android:textColor="#9B1C1C"
+                android:textSize="15sp" />
+
+            <!-- Botones al fondo de la columna -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnJugarDeNuevo"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#3B4BC8"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="Jugar de nuevo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnVolverInicio"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFFFFF"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="Volver al inicio"
+                    android:textColor="#3B4BC8"
+                    android:textSize="16sp"
+                    app:strokeColor="#3B4BC8"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

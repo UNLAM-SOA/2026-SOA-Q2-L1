@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F8"
+    android:orientation="vertical"
+    tools:context=".PartidaActivity">
+
+    <!-- Encabezado -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:text="Partida en curso"
+        android:textColor="#1B1B1F"
+        android:textSize="20sp" />
+
+    <!-- Contenido en dos columnas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp">
+
+        <!-- Columna izquierda: nivel y vidas -->
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNivel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tarjeta"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                tools:text="Nivel 2"
+                android:textColor="#1B1B1F"
+                android:textSize="36sp" />
+
+            <!-- Tarjeta de vidas: texto y tres corazones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tarjeta"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/txtVidas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Vidas: 3"
+                    android:textColor="#5E5F6B"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgVida1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_corazon_lleno" />
+
+                    <ImageView
+                        android:id="@+id/imgVida2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_corazon_lleno" />
+
+                    <ImageView
+                        android:id="@+id/imgVida3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_corazon_lleno" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Columna derecha: cartel, progreso y dificultad -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_cartel"
+                android:backgroundTint="#FFF4DB"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="14dp"
+                tools:text="Mirá la secuencia en el tablero"
+                android:textColor="#6B4A00"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!-- Tarjeta de progreso: texto y puntos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_tarjeta"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/txtPaso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        tools:text="Paso 2 de 4"
+                        android:textColor="#1B1B1F"
+                        android:textSize="17sp" />
+
+                    <!-- Los puntos se agregan desde Kotlin -->
+                    <LinearLayout
+                        android:id="@+id/contenedorPuntos"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtDificultad"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_tarjeta"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    tools:text="Dificultad: NORMAL · 2700 ms por toque"
+                    android:textColor="#5E5F6B"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

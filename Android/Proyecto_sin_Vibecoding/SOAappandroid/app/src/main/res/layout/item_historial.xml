@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Una fila del historial: hora y qué pasó -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="6dp">
+
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="09/11 11:53:16"
+        android:textColor="#5E5F6B"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Toque AZUL correcto (paso 1 de 3), vidas: 3"
+        android:textColor="#1B1B1F"
+        android:textSize="15sp" />
+
+</LinearLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F8"
+    android:orientation="vertical"
+    tools:context=".HistorialActivity">
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="Historial"
+            android:textColor="#1B1B1F"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="#FFFFFF"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Volver"
+            android:textColor="#3B4BC8"
+            app:strokeColor="#3B4BC8"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp">
+
+        <!-- Dirección de Node-RED: la IP de la PC cambia según la red -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Node-RED en"
+                android:textColor="#5E5F6B"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edtServidor"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tarjeta"
+                android:hint="IP de la PC, por ejemplo 192.168.0.25"
+                android:imeOptions="actionGo|flagNoExtractUi"
+                android:importantForAutofill="no"
+                android:inputType="textUri"
+                android:paddingHorizontal="16dp"
+                android:textColor="#1B1B1F"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnConsultar"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="#3B4BC8"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Consultar"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_cartel"
+            android:backgroundTint="#FFF4DB"
+            android:fontFamily="sans-serif-medium"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Consultando..."
+            android:textColor="#6B4A00"
+            android:textSize="14sp" />
+
+        <!-- Las filas se agregan desde Kotlin -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tarjeta"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:id="@+id/contenedorHistorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
